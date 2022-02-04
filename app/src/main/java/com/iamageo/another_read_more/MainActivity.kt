@@ -1,32 +1,48 @@
 package com.iamageo.another_read_more
 
 import android.os.Bundle
-import android.widget.TextView
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.iamageo.library.AnotherReadMore
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.iamageo.another_read_more.`simple-adapter`.SimpleAnotherAdapter
 
 
 class MainActivity : AppCompatActivity() {
-
-    private var anotherReadMore: AnotherReadMore? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /*
+        -> THIS CODE FOR SIMPLE EXAMPLE
+
         val mtv = findViewById<TextView>(R.id.tv)
 
-        anotherReadMore = AnotherReadMore.Builder(this).build()
-
-        val readMoreOption: AnotherReadMore = AnotherReadMore.Builder(this)
+        val anotherReadMore: AnotherReadMore = AnotherReadMore.Builder(this)
             .textLength(100, AnotherReadMore.TYPE_LINE)
             .moreLabel("mais")
             .lessLabel("menos")
             .build()
 
-        readMoreOption.addReadMoreTo(
+        anotherReadMore.addReadMoreTo(
             mtv,
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            getString(R.string.big_text)
         )
+
+         */
+
+        val recyclerView = findViewById<View>(R.id.mRecyclerView) as RecyclerView
+        val mLayoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = mLayoutManager
+        val dividerItemDecoration = DividerItemDecoration(
+            recyclerView.context,
+            mLayoutManager.orientation
+        )
+        recyclerView.addItemDecoration(dividerItemDecoration)
+        val mAdapter = SimpleAnotherAdapter(this)
+        recyclerView.adapter = mAdapter
+
     }
 }
