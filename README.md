@@ -21,6 +21,8 @@ Step 2. Add the dependency
 
 ### Basic example for Kotlin
 
+<img src="https://user-images.githubusercontent.com/26925002/152575671-bea1c64f-3506-42a4-a106-8fc8460223e6.gif" align="right" width="32%"/>
+
 ```kotlin
 val tv = findViewById<TextView>(R.id.mTextView)
         
@@ -31,6 +33,48 @@ val anotherReadMore: AnotherReadMore = AnotherReadMore.Builder(this)
     .build()
 
 anotherReadMore.addReadMoreTo(tv,"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+```
+### Example with RecyclerView
+<img src="https://user-images.githubusercontent.com/26925002/152580755-c51a58b3-f488-49e6-9e43-72b0e240e9e1.gif" align="right" width="32%"/>
+
+```kotlin
+internal class SimpleAnotherAdapter internal constructor(private val context: Context) :
+    RecyclerView.Adapter<SimpleAnotherAdapter.ViewHolder>() {
+
+    private val readMoreOption: AnotherReadMore = AnotherReadMore.Builder(context)
+        .build()
+
+    internal class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+        var mTextView: TextView = v.findViewById(R.id.tv)
+    }
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ViewHolder {
+        val v = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item, parent, false) as View
+        return ViewHolder(v)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        if (position % 2 == 0) {
+            readMoreOption.addReadMoreTo(
+                holder.mTextView,
+                Html.fromHtml(context.getString(R.string.big_text))
+            )
+        } else {
+            readMoreOption.addReadMoreTo(
+                holder.mTextView,
+                Html.fromHtml(context.getString(R.string.big_text)).toString()
+            )
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return 30
+    }
+}
 ```
 
 ## LICENSE
