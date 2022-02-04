@@ -1,7 +1,7 @@
-# another-read-more-lib
-📖 Another read more library.
+![banner_lib](https://user-images.githubusercontent.com/26925002/152582154-45f53428-5048-4b04-9297-e769a49ea4ec.png)
 
 [![](https://jitpack.io/v/iamageo/another-read-more-lib.svg)](https://jitpack.io/#iamageo/another-read-more-lib)
+
 
 Add it in your root build.gradle at the end of repositories:
 
@@ -41,7 +41,7 @@ anotherReadMore.addReadMoreTo(tv,"Lorem Ipsum is simply dummy text of the printi
 internal class SimpleAnotherAdapter internal constructor(private val context: Context) :
     RecyclerView.Adapter<SimpleAnotherAdapter.ViewHolder>() {
 
-    private val readMoreOption: AnotherReadMore = AnotherReadMore.Builder(context)
+    private val anotherReadMore: AnotherReadMore = AnotherReadMore.Builder(context)
         .build()
 
     internal class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -59,12 +59,12 @@ internal class SimpleAnotherAdapter internal constructor(private val context: Co
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (position % 2 == 0) {
-            readMoreOption.addReadMoreTo(
+            anotherReadMore.addReadMoreTo(
                 holder.mTextView,
                 Html.fromHtml(context.getString(R.string.big_text))
             )
         } else {
-            readMoreOption.addReadMoreTo(
+            anotherReadMore.addReadMoreTo(
                 holder.mTextView,
                 Html.fromHtml(context.getString(R.string.big_text)).toString()
             )
