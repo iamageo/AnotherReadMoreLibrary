@@ -14,7 +14,6 @@ import android.view.ViewGroup.MarginLayoutParams
 import android.widget.TextView
 
 class AnotherReadMore(
-    var context: Context? = null,
     val textLength: Int = 0,
     val textLengthType: Int = 0,
     val moreLabel: String? = null,
@@ -22,7 +21,6 @@ class AnotherReadMore(
 ) {
 
     private constructor(builder: Builder) : this(
-        builder.context,
         builder.textLength,
         builder.textLengthType,
         builder.moreLabel,
@@ -48,9 +46,10 @@ class AnotherReadMore(
                     return@Runnable
                 }
                 val lp = textView.layoutParams as MarginLayoutParams
+                val endLine = (textLength - 1).coerceAtMost(textView.layout.lineCount - 1);
                 val subString = text.toString().substring(
                     textView.layout.getLineStart(0),
-                    textView.layout.getLineEnd(textLength - 1)
+                    textView.layout.getLineEnd(endLine)
                 )
                 textLengthNew = subString.length - (moreLabel!!.length + 4 + lp.rightMargin / 6)
             }
@@ -99,8 +98,7 @@ class AnotherReadMore(
         textView.movementMethod = LinkMovementMethod.getInstance()
     }
 
-    class Builder(c: Context) {
-        val context: Context = c
+    class Builder() {
 
         var textLength = 100
             private set

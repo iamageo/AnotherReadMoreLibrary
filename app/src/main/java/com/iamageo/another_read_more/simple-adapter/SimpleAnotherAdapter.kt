@@ -15,7 +15,7 @@ import java.util.*
 internal class SimpleAnotherAdapter internal constructor(private val context: Context) :
     RecyclerView.Adapter<SimpleAnotherAdapter.ViewHolder>() {
 
-    private val readMoreOption: AnotherReadMore = AnotherReadMore.Builder(context)
+    private val readMoreOption: AnotherReadMore = AnotherReadMore.Builder()
         .build()
 
     internal class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
