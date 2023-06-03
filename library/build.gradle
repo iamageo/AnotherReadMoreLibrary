@@ -5,15 +5,15 @@ plugins {
 }
 
 group = 'com.github.iamageo'
-version = '1.0.1'
+version = '1.0.2'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
     buildToolsVersion "31.0.0"
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.1"
 
@@ -50,7 +50,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.iamageo'
                 artifactId = 'another_read_more'
-                version = '1.0.1'
+                version = '1.0.2'
             }
         }
     }
