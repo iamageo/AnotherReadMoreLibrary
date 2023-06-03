@@ -5,7 +5,7 @@ plugins {
 
 android {
     compileSdkVersion 33
-    buildToolsVersion "30.0.0"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.iamageo.another_read_more"
