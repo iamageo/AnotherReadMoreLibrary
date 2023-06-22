@@ -1,5 +1,3 @@
-package com.iamageo.another_read_more.`simple-adapter`
-
 import android.content.Context
 import android.graphics.Color
 import android.text.Html
@@ -16,8 +14,10 @@ internal class SimpleAnotherAdapter internal constructor(private val context: Co
     RecyclerView.Adapter<SimpleAnotherAdapter.ViewHolder>() {
 
     private val readMoreOption: AnotherReadMore = AnotherReadMore.Builder()
+        .moreLabelColor(Color.RED)
+        .lessLabelColor(Color.BLUE)
+        .underlineVisible(false)
         .build()
-
     internal class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         var mTextView: TextView = v.findViewById(R.id.tv)
     }

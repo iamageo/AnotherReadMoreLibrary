@@ -1,12 +1,12 @@
 package com.iamageo.another_read_more
 
+import SimpleAnotherAdapter
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.iamageo.another_read_more.`simple-adapter`.SimpleAnotherAdapter
 
 
 class MainActivity : AppCompatActivity() {
