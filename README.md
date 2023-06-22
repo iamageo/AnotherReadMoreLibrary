@@ -13,7 +13,7 @@
 </p>
 
 
-## Including in your project
+## 🏁 Including in your project 
 [![](https://jitpack.io/v/iamageo/AnotherReadMoreLibrary.svg)](https://jitpack.io/#iamageo/AnotherReadMoreLibrary)
 
 Add it in your root build.gradle at the end of repositories:
@@ -30,9 +30,18 @@ Step 2. Add the dependency
 	  implementation 'com.github.iamageo:another-read-more-lib:1.0.3'
 	}
 
-## How to use
+## 🛠 Library Attributes 
+Attributes | Type | Default | Description
+--- | --- | --- | ---
+textLength | Int | 0 | Minimal text to show labels. 
+textLengthType | Int TYPE_LINE(1) or TYPE_CHARACTER(2) | 0 | Indicates whether text trimming should be done by number of characters or by number of lines. 
+moreLabel | String | none | text of more label. 
+lessLabel | String | none | text of less label.
+moreLabelColor | Int | Color.BLACK | Color from moreLabel.
+lessLabelColor | Int | Color.BLACK | Color from lessLabel.
+underlineVisible | Boolean | true | Show/hide underline in more and less labels.
 
-### Basic example for Kotlin
+### ✨ Basic example for Kotlin 
 
 <img src="https://user-images.githubusercontent.com/26925002/152575671-bea1c64f-3506-42a4-a106-8fc8460223e6.gif" align="right" width="32%"/>
 
