@@ -1,7 +1,20 @@
 ![banner_lib](https://user-images.githubusercontent.com/26925002/152582154-45f53428-5048-4b04-9297-e769a49ea4ec.png)
 
-[![](https://jitpack.io/v/iamageo/another-read-more-lib.svg)](https://jitpack.io/#iamageo/another-read-more-lib)
+<p align="center">
+  <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
+  <a href="https://android-arsenal.com/api?level=19"><img alt="API" src="https://img.shields.io/badge/API-19%2B-brightgreen.svg?style=flat"/></a>
+  <img alt="repo size" src="https://img.shields.io/github/repo-size/iamageo/AnotherReadMoreLibrary"/>
+  <br/>
 
+
+  <br/>
+    <img alt="forks" src="https://img.shields.io/github/forks/iamageo/AnotherReadMoreLibrary?style=social"/>
+    <img alt="stars" src="https://img.shields.io/github/stars/iamageo/AnotherReadMoreLibrary?style=social"/>
+</p>
+
+
+## Including in your project
+[![](https://jitpack.io/v/iamageo/AnotherReadMoreLibrary.svg)](https://jitpack.io/#iamageo/AnotherReadMoreLibrary)
 
 Add it in your root build.gradle at the end of repositories:
 
@@ -14,7 +27,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	  implementation 'com.github.iamageo:another-read-more-lib:1.0.0'
+	  implementation 'com.github.iamageo:another-read-more-lib:1.0.3'
 	}
 
 ## How to use
