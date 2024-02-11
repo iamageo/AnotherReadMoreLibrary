@@ -3,46 +3,49 @@ package com.iamageo.another_read_more
 import SimpleAnotherAdapter
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.iamageo.another_read_more.databinding.ActivityMainBinding
+import com.iamageo.library.AnotherReadMore
 
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-        /*
-        -> THIS CODE FOR SIMPLE EXAMPLE
+        setupBasicView()
+        setupRecyclerView()
+    }
 
-        val mtv = findViewById<TextView>(R.id.tv)
+    private fun setupRecyclerView() {
+        val mLayoutManager = LinearLayoutManager(this)
+        binding.mRecyclerView.layoutManager = mLayoutManager
+        val dividerItemDecoration = DividerItemDecoration(
+            binding.mRecyclerView.context,
+            mLayoutManager.orientation
+        )
+        binding.mRecyclerView.addItemDecoration(dividerItemDecoration)
+        val mAdapter = SimpleAnotherAdapter(this)
+        binding.mRecyclerView.adapter = mAdapter
+    }
 
-        val anotherReadMore: AnotherReadMore = AnotherReadMore.Builder(this)
-            .textLength(100, AnotherReadMore.TYPE_LINE)
+    private fun setupBasicView() {
+        val anotherReadMore: AnotherReadMore = AnotherReadMore.Builder()
             .moreLabel("mais")
             .lessLabel("menos")
             .build()
 
         anotherReadMore.addReadMoreTo(
-            mtv,
+            binding.tv,
             getString(R.string.big_text)
         )
-
-         */
-
-        val recyclerView = findViewById<View>(R.id.mRecyclerView) as RecyclerView
-        val mLayoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = mLayoutManager
-        val dividerItemDecoration = DividerItemDecoration(
-            recyclerView.context,
-            mLayoutManager.orientation
-        )
-        recyclerView.addItemDecoration(dividerItemDecoration)
-        val mAdapter = SimpleAnotherAdapter(this)
-        recyclerView.adapter = mAdapter
-
     }
 }
