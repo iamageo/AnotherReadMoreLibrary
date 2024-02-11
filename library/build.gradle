@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.github.iamageo'
-version = '1.0.5'
+version = '1.0.6'
 
 android {
     namespace 'com.iamageo.library'
@@ -28,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = '17'
     }
 }
 
@@ -64,7 +64,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.iamageo'
                 artifactId = 'another_read_more'
-                version = '1.0.5'
+                version = '1.0.6'
             }
         }
     }
