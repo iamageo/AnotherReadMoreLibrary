@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupBasicView() {
         val anotherReadMore: AnotherReadMore = AnotherReadMore.Builder()
+            .textLength(3, AnotherReadMore.TextLengthType.TYPE_LINE)
             .moreLabel("mais")
             .lessLabel("menos")
             .build()

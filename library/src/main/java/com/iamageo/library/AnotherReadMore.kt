@@ -16,8 +16,8 @@ import android.view.ViewGroup.MarginLayoutParams
 import android.widget.TextView
 
 class AnotherReadMore(
-    private val textLength: Int = 0,
-    private val textLengthType: Int = 0,
+    private val textLength: Int = 100,
+    private val textLengthType: TextLengthType = TextLengthType.TYPE_CHARACTER,
     private val moreLabel: String? = null,
     private val lessLabel: String? = null,
     private val moreLabelColor: Int,
@@ -36,7 +36,7 @@ class AnotherReadMore(
     )
 
     fun addReadMoreTo(textView: TextView, text: CharSequence) {
-        if (textLengthType == TYPE_CHARACTER) {
+        if (textLengthType == TextLengthType.TYPE_CHARACTER) {
             if (text.length <= textLength) {
                 textView.text = text
                 return
@@ -47,7 +47,7 @@ class AnotherReadMore(
         }
         textView.post(Runnable {
             var textLengthNew = textLength
-            if (textLengthType == TYPE_LINE) {
+            if (textLengthType == TextLengthType.TYPE_LINE) {
                 if (textView.layout.lineCount <= textLength) {
                     textView.text = text
                     return@Runnable
@@ -134,7 +134,7 @@ class AnotherReadMore(
 
         var textLength = 100
             private set
-        var textLengthType = TYPE_CHARACTER
+        var textLengthType = TextLengthType.TYPE_CHARACTER
             private set
         var moreLabel = "mais"
             private set
@@ -147,7 +147,10 @@ class AnotherReadMore(
         var underlineVisible: Boolean = true
             private set
 
-        fun textLengthType(type: Int) = apply { textLengthType = type }
+        fun textLength(length: Int, type: TextLengthType) = apply {
+            this.textLength = length
+            this.textLengthType = type
+        }
         fun moreLabel(more: String) = apply { moreLabel = more }
         fun lessLabel(less: String) = apply { lessLabel = less }
         fun moreLabelColor(color: Int) = apply { moreLabelColor = color }
@@ -157,9 +160,9 @@ class AnotherReadMore(
         fun build() = AnotherReadMore(this)
     }
 
-    companion object {
-        const val TYPE_LINE = 1
-        const val TYPE_CHARACTER = 2
+    enum class TextLengthType {
+        TYPE_LINE,
+        TYPE_CHARACTER
     }
 
 }
