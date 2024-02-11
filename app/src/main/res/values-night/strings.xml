@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="library_title">AnotherReadMoreLibrary</string>
+    <string name="recyclerview_title">Exemplo no RecyclerView</string>
+    <string name="basic_example_title">Exemplo Básico</string>
+</resources>
