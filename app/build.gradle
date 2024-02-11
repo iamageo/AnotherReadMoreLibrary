@@ -25,12 +25,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 
     viewBinding {
@@ -45,6 +45,20 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    androidTestImplementation 'androidx.test:core:1.5.0'
+    androidTestImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    debugImplementation "androidx.test:core:1.5.0"
+
+    // Required -- JUnit 4 framework
+    testImplementation "junit:junit:4.13.2"
+    // Optional -- Robolectric environment
+    testImplementation "androidx.test:core:1.5.0"
+    // Optional -- Mockito framework
+    testImplementation "org.mockito:mockito-core:5.1.1"
+    // Optional -- Mockk framework
+    testImplementation "io.mockk:mockk:1.10.5"
 
     implementation project(':library')
 }
