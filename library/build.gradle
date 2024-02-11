@@ -8,6 +8,7 @@ group = 'com.github.iamageo'
 version = '1.0.3'
 
 android {
+    namespace 'com.iamageo.library'
     compileSdkVersion 33
     buildToolsVersion "31.0.0"
 
