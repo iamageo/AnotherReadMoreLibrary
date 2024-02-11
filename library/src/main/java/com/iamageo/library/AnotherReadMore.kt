@@ -1,6 +1,7 @@
 package com.iamageo.library
 
 import android.animation.LayoutTransition
+import android.content.Context
 import android.graphics.Color
 import android.os.Handler
 import android.text.SpannableString
@@ -98,6 +99,7 @@ class AnotherReadMore(
     private fun addReadLess(textView: TextView, text: CharSequence) {
         textView.maxLines = Int.MAX_VALUE
         val spannableStringBuilder = SpannableStringBuilder(text)
+            .append("...")
             .append(lessLabel)
         val ss = SpannableString.valueOf(spannableStringBuilder)
 
