@@ -5,13 +5,12 @@ plugins {
 
 android {
     namespace = "com.iamageo.another_read_more"
-    compileSdkVersion 33
-    buildToolsVersion "30.0.3"
+    compileSdkVersion 34
 
     defaultConfig {
         applicationId "com.iamageo.another_read_more"
         minSdkVersion 19
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
 
