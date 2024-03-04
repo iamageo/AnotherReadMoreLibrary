@@ -54,7 +54,7 @@ dependencies {
     // Optional -- Mockito framework
     testImplementation "org.mockito:mockito-core:5.1.1"
     // Optional -- Mockk framework
-    testImplementation "io.mockk:mockk:1.10.5"
+    testImplementation "io.mockk:mockk:1.13.10"
 }
 
 afterEvaluate {
