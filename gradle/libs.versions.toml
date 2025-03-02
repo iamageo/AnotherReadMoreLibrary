@@ -1,0 +1,30 @@
+[versions]
+android = "8.7.3"
+gradle = "8.0.2"
+kotlin = "2.1.0"
+androidxCore = "1.15.0"
+androidxAppCompat = "1.7.0"
+material = "1.12.0"
+androidxTestCore = "1.6.1"
+junit = "4.13.2"
+androidxTestExtJunit = "1.2.1"
+mockito = "5.1.1"
+mockk = "1.10.5"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android" }
+android-library = { id = "com.android.library", version.ref = "android" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+maven-publish = { id = "maven-publish" }
+
+[libraries]
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+kotlinStdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+coreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+testCore = { group = "androidx.test", name = "core", version.ref = "androidxTestCore" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+testExtJunit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExtJunit" }
+mockito = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
