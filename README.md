@@ -12,6 +12,8 @@
     <img alt="stars" src="https://img.shields.io/github/stars/iamageo/AnotherReadMoreLibrary?style=social"/>
 </p>
 
+[![Android CI](https://github.com/iamageo/AnotherReadMoreLibrary/actions/workflows/android_ci.yml/badge.svg)](https://github.com/iamageo/AnotherReadMoreLibrary/actions/workflows/android_ci.yml)
+
 
 ## 🏁 Including in your project 
 [![](https://jitpack.io/v/iamageo/AnotherReadMoreLibrary.svg)](https://jitpack.io/#iamageo/AnotherReadMoreLibrary)
